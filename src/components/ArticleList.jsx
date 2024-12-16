@@ -16,16 +16,13 @@ export default function ArticlesList() {
     }, []);
   
     return (
-      <section id="articles-list">
+      
         <ul className="articles-list">
-          {console.log(articles)}
-          {articles.map((article, index) => {
-            return ( 
-            <ArticleCard article={article.title} key={index} />
-            
-            )
+          {/* {console.log(articles)} */}
+          {articles.map((article) => {
+            return <ArticleCard article={article} key={article.article_id} />
           })}
         </ul>
-      </section>
+      
     );
   }
