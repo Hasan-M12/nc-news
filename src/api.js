@@ -25,4 +25,15 @@ const getCommentsById = (articleID) => {
   });
 };
 
-export { getArticles, getSingleArticle, getCommentsById };
+const updateVotes = (articleId, vote) => {
+  const patchUrl = `/articles/${articleId}`;
+  const increment = {
+    inc_votes: vote,
+  };
+  return api.patch(patchUrl, increment).then(({ data }) => {
+    const votes = data.article.votes;
+    return votes;
+  });
+};
+
+export { getArticles, getSingleArticle, getCommentsById, updateVotes };
