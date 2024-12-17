@@ -12,10 +12,17 @@ const getArticles = () => {
 };
 
 const getSingleArticle = (articleID) => {
-  return api.get(`/articles/${articleID}`).then(({data}) => {
-    const article = data.article
-    return article
-  })
-}
+  return api.get(`/articles/${articleID}`).then(({ data }) => {
+    const article = data.article;
+    return article;
+  });
+};
 
-export { getArticles, getSingleArticle };
+const getCommentsById = (articleID) => {
+  return api.get(`/articles/${articleID}/comments`).then(({ data }) => {
+    const commentsArr = data.comments;
+    return commentsArr;
+  });
+};
+
+export { getArticles, getSingleArticle, getCommentsById };

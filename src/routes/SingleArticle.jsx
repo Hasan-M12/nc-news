@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle } from "../api";
-import ReturnToMain from "../components/ReturnToMain";
 import ReturnToList from "../components/ReturnToList";
+import CommentList from "../components/CommentList";
 
 const singleArticle = () => {
     const {articleId} = useParams()
@@ -26,6 +26,7 @@ const singleArticle = () => {
             <h2>{article.title}</h2>
             <p>{article.body}</p>
             <img src={article.article_img_url} width={300} alt="Article image"/>
+            <CommentList articleId={articleId} />
             <ReturnToList />
         </div>
     )

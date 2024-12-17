@@ -21,7 +21,7 @@
   justify-content: space-between;
 }
 
-.articles-list {
+.articles-list, .comments-list {
   /* border: 2px solid rgb(16, 139, 47); */
   display: flex;
   flex-wrap: wrap;
