@@ -17,3 +17,5 @@ const Collapsible = ({children, contentDescription}) => {
 }
 
 export default Collapsible
+
+//will be in use later for showing comments
