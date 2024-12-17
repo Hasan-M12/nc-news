@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { getSingleArticle } from '../api';
 
 export default function NavList() {
     return(

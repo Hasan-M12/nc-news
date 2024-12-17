@@ -11,4 +11,11 @@ const getArticles = () => {
   });
 };
 
-export { getArticles };
+const getSingleArticle = (articleID) => {
+  return api.get(`/articles/${articleID}`).then(({data}) => {
+    const article = data.article
+    return article
+  })
+}
+
+export { getArticles, getSingleArticle };
