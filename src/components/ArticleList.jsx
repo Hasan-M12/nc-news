@@ -1,24 +1,15 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 import ArticleCard from "./ArticleCard";
-import ReturnToMain from "./ReturnToMain";
-import VoteUpdate from "./VoteUpdate";
 
-export default function ArticlesList({article, likeVote, dislikeVote}) {
+export default function ArticlesList() {
     const [articles, setArticles] = useState([]);
     const [loading, setIsLoading] = useState(true);
-
-    // const handleUpVote = () => {
-    //   VoteUpdate(article.article_id, -1).catch(() => {
-    //     setVote((currVotes) => currVotes + 1);
-    //   });
-    //   setVote((currVotes) => currVotes - 1);
-    //   setActiveVote(null);
-    // }
 
     useEffect(() => {
       getArticles()
         .then((data) => {
+          console.log(data)
           setArticles(data);
           setIsLoading(false)
         })
@@ -33,13 +24,12 @@ export default function ArticlesList({article, likeVote, dislikeVote}) {
 
     return (
       <>
-      <ReturnToMain />
         <ul className="articles-list">
           {articles.map((article) => {
+            {console.log(article, "in the article list")}
             return (
             <>
             <ArticleCard article={article} key={article.article_id} />
-            {/* <h4>Votes: {votes}</h4> */}
             </>
             )
           })}

@@ -1,15 +1,14 @@
 import '../App.css'
-import { Routes, Route } from "react-router-dom";
-import NavList from '../components/NavList'
 import Footer from '../components/Footer'
 import Header from '../components/Header';
+import Articles from './Articles';
 
 function Home() {
 
     return (
       <>
       <Header />
-      <NavList />
+      <Articles />
       <Footer />
       </>
     )

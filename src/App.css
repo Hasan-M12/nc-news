@@ -21,12 +21,21 @@
   justify-content: space-between;
 }
 
-.articles-list, .comments-list {
+.articles-list {
   /* border: 2px solid rgb(16, 139, 47); */
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comments-list {
+  /* border: 2px solid rgb(16, 139, 47); */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -45,6 +54,20 @@ li {
 
 .comment-text {
   margin-bottom: 3%;
+}
+
+.topics-list {
+  display: flex;
+}
+
+.topic-card {
+  margin: 2%;
+  background-color: rgba(120, 202, 43, 0.438);
+  border-radius: 8px;
+}
+
+.topic-card:hover {
+  filter: drop-shadow(0 0 2em #2cc441aa);
 }
 
 .logo {

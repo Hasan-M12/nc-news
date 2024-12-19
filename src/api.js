@@ -25,6 +25,14 @@ const getCommentsById = (articleID) => {
   });
 };
 
+const getTopics = () => {
+  return api.get(`/topics`).then(({ data }) => {
+    const topics = data.topics;
+    // console.log(topics)
+    return topics
+  });
+};
+
 const updateVotes = (articleId, vote) => {
   const patchUrl = `/articles/${articleId}`;
   const increment = {
@@ -36,4 +44,20 @@ const updateVotes = (articleId, vote) => {
   });
 };
 
-export { getArticles, getSingleArticle, getCommentsById, updateVotes };
+const postComment = (articleId) => {
+  const commentUrl = `/articles/${articleId}/comments`;
+
+  return api.post(commentUrl, comment).then(({ data }) => {
+    const commentsArr = data.comment;
+    return commentsArr;
+  });
+};
+
+export {
+  getArticles,
+  getSingleArticle,
+  getCommentsById,
+  updateVotes,
+  postComment,
+  getTopics,
+};
